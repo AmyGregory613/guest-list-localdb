@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.inputs {
+			height: 30px;
+			width: 300px;
+			padding: 2px, 5px;
+			margin: 2px, 5px; 
+		}
+	</style>
+		
+</head>
+<body>
+	<!-- left side -->
+	<div>
+		<div class="inputs">
+			First Name: <input type="text" id="firstname" />
+		</div>
+		<div class="inputs">
+			Last Name: <input type="text" id="lastname" />
+		</div>
+		<div class="inputs">
+			Email: <input type="email" id="email" />
+		</div>
+		<div class="inputs">
+			Notes: <input type="text" id="notes" />
+		</div>
+		<div class="inputs">
+			<input type="button" value="submit" id="btn" />
+		</div>
+	</div>
+	<!-- right side -->
+	<div>
+		<h1>Guest List</h1>
+		<div id="result">
+			
+		</div>
+	</div>
+	<script src="guest-list-indexeddb.js"></script>
+	<script>
+		//wire up click event to add function
+		document.querySelector("#btn").addEventListener("click", add);
+		
+	</script>
+	
+</body>
+</html>

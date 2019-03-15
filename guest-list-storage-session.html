@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="result"></div>
+	<script>
+		//check that this property exists
+		if (sessionStorage.refreshcount) {
+			//increment the property by 1
+			sessionStorage.refreshcount =
+				Number(sessionStorage.refreshcount) + 1;
+		} else {
+			//set the property for the first time
+			sessionStorage.refreshcount = 1;
+		}
+		//read the value
+		document.getElementById("result").innerHTML = "You have refreshed this page " + sessionStorage.refreshcount + " time(s) in this session.";
+	</script>
+</body>
+</html>
