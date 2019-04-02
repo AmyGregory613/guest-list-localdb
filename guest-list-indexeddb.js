@@ -1,6 +1,7 @@
 // some sample data
+// See line 43 where guestData is called
 const guestData = [
-   { firstname: "Andy", lastname: "Seimer", email: "andy@cool.com", notes: "Your rock" },
+   { firstname: "Andy", lastname: "Seimer", email: "andy@cool.com", notes: "You rock" },
    { firstname: "Frank", lastname: "Cool", email: "frank@cool.com", notes: "Thanks for the invite!" }
 ];
 
@@ -39,6 +40,7 @@ function initDatabase() {
 	request.onupgradeneeded = function(event) {
       var db = event.target.result;
       var objectStore = db.createObjectStore("guest", {keyPath: "email"});
+      // "guest" is the db
       
       for (var i in guestData) {
          objectStore.add(guestData[i]);
@@ -92,11 +94,11 @@ function read() {
    request.onsuccess = function(event) {
       // Do something with the request.result!
       if(request.result){ 
-         alert("First Name: " + request.result.firstname + ", Last name: " + request.result.lastname + ", Email: " + request.result.email + ", Notes: " + request.result.notes");
+         alert(request.result.email);
       }
       
       else {
-         alert("Kenny couldn't be found in your database!");
+         alert("Couldn't be found in your database!");
       }
    };
 }
